@@ -1,0 +1,18 @@
+export const Radius = {
+  Sharp: "0px",
+  xxs: "2px",
+  xs: "2px",
+  s: "4px",
+  sm: "8px",
+  m: "16px",
+  ml: "32px",
+  lg: "64px",
+  xl: "128px",
+  "2xl": "256px",
+  "3xl": "512px",
+  "4xl": "1024px",
+  "5xl": "2048px",
+  "6xl": "4096px",
+  "7xl": "8192px",
+  Round: "999px",
+};

@@ -1,0 +1,27 @@
+// src/styles/utils/_spacing.scss
+@mixin generate-spacing-utilities($property, $prefix) {
+  @for $i from 0 through 5 {
+    .#{$property}-#{$i} {
+      #{$prefix}: $i * $spacing-unit;
+    }
+
+    .#{$property}t-#{$i} {
+      #{$prefix}-top: $i * $spacing-unit;
+    }
+
+    .#{$property}r-#{$i} {
+      #{$prefix}-right: $i * $spacing-unit;
+    }
+
+    .#{$property}b-#{$i} {
+      #{$prefix}-bottom: $i * $spacing-unit;
+    }
+
+    .#{$property}l-#{$i} {
+      #{$prefix}-left: $i * $spacing-unit;
+    }
+  }
+}
+
+@include generate-spacing-utilities("m", "margin"); // Margin utilities
+@include generate-spacing-utilities("p", "padding"); // Padding utilities

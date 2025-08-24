@@ -1,0 +1,35 @@
+import React from "react";
+import SuspenseWrapper from "@/router/component/SuspenseWrapper";
+const Dashboard = React.lazy(() => import("@/pages/DashBoard/dashboard"));
+const ManageQr = React.lazy(() => import("@/pages/QR/index"));
+const ProfileDashboard = React.lazy(() => import("@/pages/profile/ProfileDashboard"));
+
+const Index = [
+  {
+    path: "dashboard",
+    element: (
+      <SuspenseWrapper>
+        <Dashboard />
+      </SuspenseWrapper>
+    ),
+  },
+    {
+    path: "manageQr",
+    element: (
+      <SuspenseWrapper>
+        <ManageQr />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: "profile",
+    element: (
+      <SuspenseWrapper>
+        <ProfileDashboard />
+      </SuspenseWrapper>
+    ),
+  }
+
+];
+
+export default Index;
