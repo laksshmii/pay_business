@@ -16,6 +16,7 @@ import {
     AccountBalance,
     QrCode,
 } from '@mui/icons-material';
+import cardImg from '../../assets/img/bill-payment- 2.png';
 
 // Styled Components
 const GradientBox = styled(Box)(({ theme }) => ({
@@ -52,8 +53,9 @@ const ImageBox = styled(Box)(({ theme }) => ({
 const StatsCard = styled(Card)(({ theme }) => ({
     padding: theme.spacing(3),
     textAlign: 'center',
-    height: '100%',
+    height: '140px',
     borderRadius: '12px',
+    width: '234px',
 }));
 
 const DashboardContainer = styled(Box)(({ theme }) => ({
@@ -64,16 +66,18 @@ const DashboardContainer = styled(Box)(({ theme }) => ({
 
 const HeroCard = styled(Box)(({ theme }) => ({
     marginTop: '2px',
-    borderRadius: '16px',
+    borderRadius: '12px',
     boxShadow: '0px 4px 12px 4px #E9E9E980',
-    width: '100%',
-    height: 260,
+    width: '1000px',
+    height: 240,
     display: 'flex',
     overflow: 'hidden',
+    border: "2px",
     [theme.breakpoints.down('sm')]: {
         flexDirection: 'column',
         height: 'auto',
     },
+    backgroundColor:"#FFFFFF",
 }));
 
 // Styled components for the profile and QR cards
@@ -141,7 +145,7 @@ const Dashboard = () => {
             <Grid container spacing={3}>
                 {/* Hero Banner Card */}
                 <Grid item xs={12}>
-                    <HeroCard>
+                    <HeroCard >
                         <GradientBox>
                             <Typography variant="h5" fontWeight="bold" sx={{ mb: 1 }}>
                                 Pay ₹1/month* for the QPay POS Device
@@ -170,7 +174,7 @@ const Dashboard = () => {
                         <ImageBox>
                             <Box
                                 component="img"
-                                src="https://via.placeholder.com/300x200/42794A/FFFFFF?text=QPay+Device"
+                                src={cardImg}
                                 alt="QPay Device"
                                 sx={{
                                     width: { xs: '70%', md: '60%' },
@@ -188,22 +192,11 @@ const Dashboard = () => {
                         {stats.map((stat, index) => (
                             <Grid item xs={12} sm={6} md={3} key={index}>
                                 <StatsCard>
-                                    <Avatar
-                                        sx={{
-                                            bgcolor: 'primary.main',
-                                            color: 'white',
-                                            width: 56,
-                                            height: 56,
-                                            mx: 'auto',
-                                            mb: 2,
-                                        }}
-                                    >
-                                        {stat.icon}
-                                    </Avatar>
-                                    <Typography variant="h4" fontWeight="bold" gutterBottom>
+                                   
+                                    <Typography variant="h4" fontWeight="bold" gutterBottom style={{ color: '#42794A', fontSize:"40px" ,letterSpacing:"-2%", forntweight:"700", lineHeight:"100%",horizontalAlign:"center"}}>
                                         {stat.value}
                                     </Typography>
-                                    <Typography variant="body2" color="text.secondary">
+                                    <Typography variant="body2" color="text.secondary" sx={{ fontSize:"20px" , forntweight:"500", lineHeight:"100%", letterSpacing:"0%"}}>
                                         {stat.title}
                                     </Typography>
                                 </StatsCard>

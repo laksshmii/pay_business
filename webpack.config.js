@@ -21,14 +21,14 @@ module.exports = (env, argv) => {
   const apiUrl = isDevelopment
     ? process.env.DEV_API_URL
     : isQA
-    ? process.env.QA_API_URL
-    : process.env.PROD_API_URL;
+      ? process.env.QA_API_URL
+      : process.env.PROD_API_URL;
 
   const port = isDevelopment
     ? process.env.DEV_PORT
     : isQA
-    ? process.env.QA_PORT
-    : process.env.PROD_PORT;
+      ? process.env.QA_PORT
+      : process.env.PROD_PORT;
 
   return {
     entry: "./src/index.js",
@@ -116,17 +116,17 @@ module.exports = (env, argv) => {
         filename: "index.html",
         minify: isProduction
           ? {
-              removeComments: true,
-              collapseWhitespace: true,
-              removeRedundantAttributes: true,
-              useShortDoctype: true,
-              removeEmptyAttributes: true,
-              removeStyleLinkTypeAttributes: true,
-              keepClosingSlash: true,
-              minifyJS: true,
-              minifyCSS: true,
-              minifyURLs: true,
-            }
+            removeComments: true,
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            useShortDoctype: true,
+            removeEmptyAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            keepClosingSlash: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+          }
           : false,
         publicPath: process.env.PUBLIC_URL || "./",
       }),
@@ -220,16 +220,20 @@ module.exports = (env, argv) => {
           "Access-Control-Allow-Headers":
             "X-Requested-With, content-type, Authorization",
         },
-        setupMiddlewares: (middlewares, devServer) => {
-          const app = devServer.app;
-          app.use(
-            "/api",
-            express.static(path.resolve(__dirname, "node_modules/.cache"))
-          );
-          return middlewares;
-        },
+        proxy: [
+          {
+            context: ["/wallet"],
+            target: "https://64.227.189.27",
+            changeOrigin: true,
+            secure: false,  // ⬅️ allows invalid/self-signed certs
+            logLevel: "debug",
+          },
+        ],
+
+
       },
     }),
+
     performance: {
       hints: false,
       maxEntrypointSize: 512000,

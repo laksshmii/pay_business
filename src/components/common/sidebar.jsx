@@ -37,8 +37,7 @@ import {
 } from "@mui/icons-material";
 import { useLocation, Link } from "react-router-dom";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
-import sidebarfooter from "../../assets/img/sidebarfooter.png";
-import sidebarlogo from "../../assets/img/sidebar_logo.png";
+
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import ModalWrapper from "@/components/forms/ModalWrapper";
 import { type } from "@testing-library/user-event/dist/type";
@@ -149,6 +148,11 @@ const DrawerComponent = ({
       text: "Home",
       path: "/profile",
       icon: <BuildOutlined />,
+    },
+    {
+      text: "Home",
+      path: "/history",
+      icon: <BuildOutlined />,
     }
 
 
@@ -182,7 +186,7 @@ const DrawerComponent = ({
         }}
       >
         <img
-          src={sidebarlogo}
+          src=""
           alt="Sidebar Logo"
           style={{ height: "48px", width: "56px" }}
         />
@@ -288,7 +292,7 @@ const DrawerComponent = ({
           justifyContent: "center",
           alignItems: "center",
           padding: 1,
-          backgroundImage: `url(${sidebarfooter})`,
+          backgroundImage: `url()`,
           backgroundSize: "100% 105%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "bottom",

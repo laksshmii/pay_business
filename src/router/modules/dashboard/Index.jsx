@@ -3,6 +3,7 @@ import SuspenseWrapper from "@/router/component/SuspenseWrapper";
 const Dashboard = React.lazy(() => import("@/pages/DashBoard/dashboard"));
 const ManageQr = React.lazy(() => import("@/pages/QR/index"));
 const ProfileDashboard = React.lazy(() => import("@/pages/profile/ProfileDashboard"));
+const SettlementHistory = React.lazy(() => import("@/pages/History/history"));
 
 const Index = [
   {
@@ -26,6 +27,14 @@ const Index = [
     element: (
       <SuspenseWrapper>
         <ProfileDashboard />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: "history",
+    element: (
+      <SuspenseWrapper>
+        <SettlementHistory />
       </SuspenseWrapper>
     ),
   }
