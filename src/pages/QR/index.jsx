@@ -72,9 +72,6 @@ const ManageQrPos = () => {
         { label: 'QR Code Requests', component: <QrCodeRequests /> },
     ];
 
-
-
-
     return (
         <PageContainer>
             <HeaderCard>
@@ -117,8 +114,6 @@ const ManageQrPos = () => {
                         >
                             Request more QR Codes
                         </Button>
-
-
                     </ContentCard>
                 </Grid>
             </Grid>
