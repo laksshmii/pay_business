@@ -122,6 +122,7 @@ const ManageQrPos = () => {
                     </ContentCard>
                 </Grid>
             </Grid>
+            
         </PageContainer>
     );
 };
