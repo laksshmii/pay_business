@@ -112,7 +112,7 @@ module.exports = (env, argv) => {
         favicon: "./public/favicon.ico",
         template: path.resolve(__dirname, "public", "index.html"),
         manifest: "./public/manifest.json",
-        title: "Budgie 2.4",
+        title: "Pay Business",
         filename: "index.html",
         minify: isProduction
           ? {
