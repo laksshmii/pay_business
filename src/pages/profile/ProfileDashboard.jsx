@@ -8,6 +8,8 @@ import {
   Avatar,
   styled,
   IconButton,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import {
   AccountBalanceOutlined,
@@ -17,15 +19,11 @@ import {
   PeopleOutlined,
   LanguageOutlined,
   ChevronRight,
-
-
-
 } from "@mui/icons-material";
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import GradingOutlinedIcon from '@mui/icons-material/GradingOutlined';
 import profilLogo from '../../assets/img/profile_logo.png';
-
 
 // Styled Components
 const GradientBox = styled(Box)(({ theme }) => ({
@@ -60,7 +58,7 @@ const ImageBox = styled(Box)(({ theme }) => ({
 const InfoCard = styled(Card)(({ theme }) => ({
   padding: theme.spacing(3),
   borderRadius: "12px",
-  backgroundColor: "#EEF8F2", // Light green background
+  backgroundColor: "#EEF8F2",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -77,17 +75,24 @@ const InfoCard = styled(Card)(({ theme }) => ({
 }));
 
 const ServiceCard = styled(Card)(({ theme }) => ({
-  padding: theme.spacing(3),
-  borderRadius: "12px",
+  padding: theme.spacing(2),
+  borderRadius: "16px",
   border: "1px solid #E0E0E0",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  gap: theme.spacing(1),
   textAlign: "center",
-  height: "100%",
-  boxShadow: "none",
+  height: "80px",
+  width: "80px",
+  boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
+  color: "#42794A",
+
+  transition: "transform 0.2s, box-shadow 0.2s",
+  "&:hover": {
+    transform: "translateY(-4px)",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+  },
 }));
 
 const HeroCard = styled(Box)(({ theme }) => ({
@@ -103,15 +108,29 @@ const HeroCard = styled(Box)(({ theme }) => ({
     height: "auto",
   },
   backgroundColor: "#FFFFFF",
-
 }));
 
 const DashboardContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(3),
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(2),
+  },
 }));
 
 // Component
 const ProfileDashboard = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const ManagementCard = styled(Card)(({ theme }) => ({
+    padding: theme.spacing(3),
+    borderRadius: '16px',
+    border: '1px solid #E0E0E0',
+    height: '210px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    padding: "24px 32px 32px 36px"
+  }));
   const infoCards = [
     {
       icon: <AccountBalanceOutlined />,
@@ -188,7 +207,7 @@ const ProfileDashboard = () => {
         </Grid>
 
         {/* Info Cards */}
-        <Grid item xs={12}>
+        <Grid item xs={12} gap="16px">
           <Grid container spacing={3}>
             {infoCards.map((item, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
@@ -230,77 +249,84 @@ const ProfileDashboard = () => {
         </Grid>
 
         {/* Business Services & Manage Business */}
-        <Grid item xs={12}>
-          <Grid container spacing={3}>
+        <Grid item xs={12} gap="20px">
+          <Grid container spacing={isMobile ? 2 : 3}>
             {/* Business Services */}
             <Grid item xs={12} md={6}>
-              <Box sx={{ mb: 2 }}>
-                <Typography
-                  variant="caption"
-                  fontWeight="bold"
-                  sx={{ color: "#999" }}
-                >
-                  BUSINESS SERVICES
-                </Typography>
-              </Box>
-              <Grid container spacing={3}>
-                {businessServices.map((service, index) => (
-                  <Grid item xs={6} key={index}>
-                    <ServiceCard>
-                      <Avatar
-                        sx={{
-                          bgcolor: "#E8F5E9",
-                          color: "#2E7D32",
-                          width: 56,
-                          height: 56,
-                        }}
-                      >
-                        {service.icon}
-                      </Avatar>
-                      <Typography fontWeight="bold">
-                        {service.title}
-                      </Typography>
-                    </ServiceCard>
-                  </Grid>
-                ))}
-              </Grid>
+              <ManagementCard>
+                <Box sx={{ mb: 2 }}>
+                  <Typography
+                    variant="caption"
+                    fontWeight="bold"
+                    sx={{ color: "#999", fontSize: "0.9rem" }}
+                  >
+                    BUSINESS SERVICES
+                  </Typography>
+                </Box>
+                <Grid container spacing={isMobile ? 1 : 2}>
+                  {businessServices.map((service, index) => (
+                    <Grid item xs={3} key={index} gap={"8px"}>
+                      <Box sx={{ display: "flex", mb: 2, flexDirection: "column", alignItems: "center" }}>
+
+                        <ServiceCard>
+                          {service.icon}
+
+                        </ServiceCard>
+                        <Typography
+                          fontWeight="bold"
+                          textAlign="center"
+                          sx={{ mt: 1, wordWrap: "break-word", whiteSpace: "normal" }}
+                        >
+                          {service.title}
+                        </Typography>
+                      </Box>
+
+
+                    </Grid>
+                  ))}
+                </Grid>
+              </ManagementCard>
             </Grid>
 
             {/* Manage Business */}
             <Grid item xs={12} md={6}>
-              <Box sx={{ mb: 2 }}>
-                <Typography
-                  variant="caption"
-                  fontWeight="bold"
-                  sx={{ color: "#999" }}
-                >
-                  MANAGE BUSINESS
-                </Typography>
-              </Box>
-              <Grid container spacing={3}>
-                {manageBusiness.map((item, index) => (
-                  <Grid item xs={6} md={4} key={index}>
-                    <ServiceCard>
-                      <Avatar
-                        sx={{
-                          bgcolor: "#E8F5E9",
-                          color: "#2E7D32",
-                          width: 56,
-                          height: 56,
-                        }}
-                      >
-                        {item.icon}
-                      </Avatar>
-                      <Typography fontWeight="bold">{item.title}</Typography>
-                    </ServiceCard>
-                  </Grid>
-                ))}
-              </Grid>
+
+              <ManagementCard>
+                <Box sx={{ mb: 2 }}>
+                  <Typography
+                    variant="caption"
+                    fontWeight="bold"
+                    sx={{ color: "#999", fontSize: "0.9rem" }}
+                  >
+                    MANAGE BUSINESS
+                  </Typography>
+                </Box>
+                <Grid container spacing={isMobile ? 1 : 2}>
+                  {manageBusiness.map((item, index) => (
+                    <Grid item xs={3} md={4} key={index} gap={"8px"}>
+                      <Box sx={{ display: "flex", mb: 2, flexDirection: "column", alignItems: "center" }}>
+                        <ServiceCard>
+                          {item.icon}
+                        </ServiceCard>
+                        <Typography
+                          fontWeight="bold"
+                          textAlign="center"
+                          sx={{ mt: 1, wordWrap: "break-word", whiteSpace: "normal" }}
+                        >
+                          {item.title}
+                        </Typography>
+                      </Box>
+
+                    </Grid>
+                  ))}
+                </Grid>
+              </ManagementCard>
             </Grid>
+
           </Grid>
         </Grid>
       </Grid>
-    </DashboardContainer>
+    </DashboardContainer >
   );
 };
 
