@@ -66,7 +66,6 @@ const StatusChip = styled(Box)(({ theme }) => ({
     marginTop: theme.spacing(1),
 }));
 
-// Component
 const ManageQrPos = () => {
     const tabs = [
         { label: 'Active QR Codes', component: <ActiveQrList /> },

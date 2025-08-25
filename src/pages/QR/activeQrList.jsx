@@ -60,7 +60,6 @@ const ActiveQrList = () => {
             padding: '16px !important',
             '&:last-child': { paddingBottom: '16px' }
           }}>
-            {/* QR Code Image */}
             <CardContent sx={{
               width: "96px",
               height: "96px",
@@ -78,7 +77,6 @@ const ActiveQrList = () => {
             </CardContent>
 
 
-            {/* QR Code Details */}
             <Box sx={{ flexGrow: 1, gap: '8px' }}>
               <Typography variant="h6" gutterBottom sx={{ color: '#252525', fontWeight: "600", fontStyle: "Semibold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "Right" }}>
                 {qr.id}
@@ -91,7 +89,6 @@ const ActiveQrList = () => {
               </Typography>
             </Box>
 
-            {/* Right Arrow Icon */}
             <IconButton size="small" sx={{ color: '#42794A' }}>
               <ChevronRight />
             </IconButton>

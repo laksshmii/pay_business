@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 
 import QrStatusAccordion from './qrStatusAccordion';
-// Styled Components
 const RequestCard = styled(Card)(({ theme }) => ({
     marginBottom: theme.spacing(2),
     borderRadius: '12px',
@@ -48,7 +47,6 @@ const QrCodeRequests = () => {
                 <RequestCard key={request.id} variant="outlined">
                     <CardContent sx={{ padding: '16px !important' }}>
                         <Box sx={{ display: 'flex' }}>
-                            {/* QR Code Container */}
                             <Box
                                 sx={{
                                     width: "96px",
@@ -88,7 +86,6 @@ const QrCodeRequests = () => {
                             </Box>
                         </Box>
 
-                        {/* Status Accordion */}
                         <QrStatusAccordion />
                     </CardContent>
                 </RequestCard>

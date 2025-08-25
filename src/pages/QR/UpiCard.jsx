@@ -47,7 +47,6 @@ const UpiCard = () => {
         <>
             <ContentCard>
                 <Box display="flex" flexDirection="column" alignItems="center">
-                    {/* QR Code */}
                     <Box
                         component="img"
                         src={logo}
@@ -60,7 +59,6 @@ const UpiCard = () => {
 
                         }}
                     />
-                    {/* QR Code */}
                     <Box
                         component="img"
                         src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=9876543210sqpay`}
@@ -73,7 +71,6 @@ const UpiCard = () => {
                         }}
                     />
 
-                    {/* UPI ID with Copy Icon */}
                     <Box display="flex" alignItems="center" mb={1}>
                         <Typography variant="h6" sx={{ fontSize: '20px', fontWeight: "700", fontStyle: "bold", lineHeight: "100%", letterSpacing: "0%" }}>
                             UPI ID: 9876543210sqpay
@@ -87,12 +84,10 @@ const UpiCard = () => {
                         </IconButton>
                     </Box>
 
-                    {/* Additional Text */}
                     <Typography variant="body2" color="text.secondary" sx={{ fontWeight: "500", fontStyle: "medium", fontSize: "16px", lineHeight: "18px", letterSpacing: "0%" }} gutterBottom>
                         liuaiim Mohamraddi
                     </Typography>
 
-                    {/* Buttons */}
                     <Box display="flex" gap={2} mt={3}>
                         <Button
                             variant="outlined"
@@ -140,7 +135,6 @@ const UpiCard = () => {
                 </Box>
             </ContentCard>
 
-            {/* Snackbar for copy confirmation */}
             <Snackbar
                 open={openSnackbar}
                 autoHideDuration={2000}

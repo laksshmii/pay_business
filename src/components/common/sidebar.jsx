@@ -30,7 +30,6 @@ import {
 import { useLocation, Link } from "react-router-dom";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import HomeIcon from '@mui/icons-material/Home';
-import ModalWrapper from "@/components/forms/ModalWrapper";
 import logo from "../../assets/img/Group 17.png";
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -128,7 +127,7 @@ const DrawerComponent = ({
 
     {
       text: "Home",
-      path: "/dashboard",
+      path: "/",
       icon: <HomeIcon />,
 
     },
@@ -285,13 +284,7 @@ const DrawerComponent = ({
 
   return (
     <>
-      <ModalWrapper
-        open={open}
-        handleClose={() => setOpen(false)}
-        initialValues={initialValues}
-        fields={fields}
-        label={"Help Desk"}
-      />
+    
 
       <Drawer
         container={container}

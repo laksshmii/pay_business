@@ -17,8 +17,7 @@ import {
     QrCode,
 } from '@mui/icons-material';
 import cardImg from '../../assets/img/bill-payment- 2.png';
-
-// Styled Components
+import { useNavigate } from "react-router-dom";
 const GradientBox = styled(Box)(({ theme }) => ({
     width: '70%',
     background: 'linear-gradient(90deg, #42794A 0%, #61CE70 100%)',
@@ -80,7 +79,6 @@ const HeroCard = styled(Box)(({ theme }) => ({
     backgroundColor: "#FFFFFF",
 }));
 
-// Styled components for the profile and QR cards
 const ProfileCard = styled(Card)(({ theme }) => ({
     padding: theme.spacing(4),
     height: 392,
@@ -102,7 +100,6 @@ const QrCard = styled(Card)(({ theme }) => ({
     justifyContent: 'space-between',
 }));
 
-// New styled components for Settlement and Transactions cards
 const SettlementCard = styled(Card)(({ theme }) => ({
     padding: theme.spacing(3),
     borderRadius: '16px',
@@ -125,9 +122,19 @@ const TransactionsCard = styled(Card)(({ theme }) => ({
     justifyContent: 'space-between',
 }));
 
-// Component
+
 const Dashboard = () => {
     const [progress, setProgress] = useState(30);
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/manageQr"); 
+    };
+
+    const handleClickSettleNow = () => {
+        navigate("/history"); 
+    };
+
 
     const stats = [
         { title: 'Account Holders', value: '1.5k', icon: <AccountBalanceWallet /> },
@@ -136,7 +143,6 @@ const Dashboard = () => {
         { title: 'QR Orders', value: '4.5k', icon: <QrCode /> },
     ];
 
-    // Sample transaction data
     const transactions = [
         { name: 'Ibrahim', date: '23 Oct, 09:15 AM', amount: '+90' },
         { name: 'Ibrahim', date: '23 Oct, 09:15 AM', amount: '+90' },
@@ -146,7 +152,6 @@ const Dashboard = () => {
     return (
         <DashboardContainer>
             <Grid container spacing={3}>
-                {/* Hero Banner Card */}
                 <Grid item xs={12}>
                     <HeroCard >
                         <GradientBox>
@@ -189,7 +194,6 @@ const Dashboard = () => {
                     </HeroCard>
                 </Grid>
 
-                {/* Stats Section */}
                 <Grid item xs={12}>
                     <Grid container spacing={3} sx={{ mb: 4 }}>
                         {stats.map((stat, index) => (
@@ -208,10 +212,8 @@ const Dashboard = () => {
                     </Grid>
                 </Grid>
 
-                {/* Profile and QR Cards */}
                 <Grid item xs={12}>
                     <Grid container spacing={3}>
-                        {/* Profile Card */}
                         <Grid item xs={12} md={6}>
                             <ProfileCard>
                                 <Typography
@@ -315,7 +317,6 @@ const Dashboard = () => {
                             </ProfileCard>
                         </Grid>
 
-                        {/* QR Card */}
                         <Grid item xs={12} md={6}>
                             <QrCard>
                                 <Typography
@@ -384,8 +385,9 @@ const Dashboard = () => {
                                         borderRadius: "12px",
                                         padding: "16px 24px 16px 24px",
                                     }}
+                                    onClick={handleClick}
                                 >
-                                    Next
+                                    View More
                                 </Button>
                             </QrCard>
                         </Grid>
@@ -452,6 +454,8 @@ const Dashboard = () => {
                                         borderRadius: "12px",
                                         padding: "16px 24px 16px 24px",
                                     }}
+                                    onClick={handleClickSettleNow}
+
                                 >
                                     Settle Now
                                 </Button>

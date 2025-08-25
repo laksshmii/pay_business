@@ -25,7 +25,6 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import GradingOutlinedIcon from '@mui/icons-material/GradingOutlined';
 import profilLogo from '../../assets/img/profile_logo.png';
 
-// Styled Components
 const GradientBox = styled(Box)(({ theme }) => ({
   width: "70%",
   background: "linear-gradient(90deg, #42794A 0%, #61CE70 100%)",
@@ -117,7 +116,6 @@ const DashboardContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-// Component
 const ProfileDashboard = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -206,7 +204,6 @@ const ProfileDashboard = () => {
           </HeroCard>
         </Grid>
 
-        {/* Info Cards */}
         <Grid item xs={12} gap="16px">
           <Grid container spacing={3}>
             {infoCards.map((item, index) => (
@@ -248,10 +245,8 @@ const ProfileDashboard = () => {
           </Grid>
         </Grid>
 
-        {/* Business Services & Manage Business */}
         <Grid item xs={12} gap="20px">
           <Grid container spacing={isMobile ? 2 : 3}>
-            {/* Business Services */}
             <Grid item xs={12} md={6}>
               <ManagementCard>
                 <Box sx={{ mb: 2 }}>
@@ -288,7 +283,6 @@ const ProfileDashboard = () => {
               </ManagementCard>
             </Grid>
 
-            {/* Manage Business */}
             <Grid item xs={12} md={6}>
 
               <ManagementCard>

@@ -15,7 +15,6 @@ import {
     CheckCircle
 } from '@mui/icons-material';
 
-// Styled Components
 const StatusAccordion = styled(Accordion)(({ theme }) => ({
     marginTop: theme.spacing(1),
     borderRadius: '8px',

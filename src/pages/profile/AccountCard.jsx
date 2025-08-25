@@ -45,7 +45,6 @@ const AccountInfo = () => {
         
         <Divider sx={{ my: 2 }} />
         
-        {/* Options List */}
         <List>
           <ListItem sx={{ px: 0 }}>
             <ListItemIcon sx={{ minWidth: '40px' }}>
