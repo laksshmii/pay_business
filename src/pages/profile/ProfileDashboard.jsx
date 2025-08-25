@@ -98,7 +98,6 @@ const HeroCard = styled(Box)(({ theme }) => ({
   marginTop: "2px",
   borderRadius: "16px",
   boxShadow: "0px 4px 12px 4px #E9E9E980",
-  width: "100%",
   height: 200,
   display: "flex",
   overflow: "hidden",

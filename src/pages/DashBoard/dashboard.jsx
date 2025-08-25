@@ -67,7 +67,6 @@ const HeroCard = styled(Box)(({ theme }) => ({
     marginTop: '2px',
     borderRadius: '12px',
     boxShadow: '0px 4px 12px 4px #E9E9E980',
-    width: '1000px',
     height: 240,
     display: 'flex',
     overflow: 'hidden',
@@ -128,11 +127,11 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate("/manageQr"); 
+        navigate("/manageQr");
     };
 
     const handleClickSettleNow = () => {
-        navigate("/history"); 
+        navigate("/history");
     };
 
 
