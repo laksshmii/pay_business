@@ -138,9 +138,9 @@ const Dashboard = () => {
 
     // Sample transaction data
     const transactions = [
-        { name: 'Ibrahim', date: '23 Oct, 09:15 AM', amount: '+990' },
-        { name: 'Ibrahim', date: '23 Oct, 09:15 AM', amount: '+990' },
-        { name: 'Ibrahim', date: '23 Oct, 09:15 AM', amount: '+990' },
+        { name: 'Ibrahim', date: '23 Oct, 09:15 AM', amount: '+90' },
+        { name: 'Ibrahim', date: '23 Oct, 09:15 AM', amount: '+90' },
+        { name: 'Ibrahim', date: '23 Oct, 09:15 AM', amount: '+90' },
     ];
 
     return (
@@ -380,7 +380,6 @@ const Dashboard = () => {
                                             bgcolor: '#42794A'
                                         },
                                         flexFlow: "HORIZONTAL",
-                                        width: "426px",
                                         height: "56px",
                                         borderRadius: "12px",
                                         padding: "16px 24px 16px 24px",
@@ -393,10 +392,8 @@ const Dashboard = () => {
                     </Grid>
                 </Grid>
 
-                {/* Settlement and Transactions Cards */}
                 <Grid item xs={12}>
                     <Grid container spacing={3}>
-                        {/* Settlement Card */}
                         <Grid item xs={12} md={6}>
                             <SettlementCard>
                                 <Box>
@@ -415,26 +412,26 @@ const Dashboard = () => {
                                     >
                                         SETTLEMENT
                                     </Typography>
-                                    <Typography variant="h5" fontWeight="bold" sx={{ mt: 1, mb: 2, fontWeight: "600", fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
+                                    <Typography variant="h5" sx={{ mt: 1, mb: 2, fontWeight: "600", fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                         ¥1,23,816.19
                                     </Typography>
-
+                                    <Divider />
                                     {transactions.map((transaction, index) => (
                                         <Box key={index}>
                                             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 1.5 }}>
                                                 <Box>
-                                                    <Typography variant="body1" fontWeight="medium">
+                                                    <Typography variant="body1" sx={{ fontWeight: "600", fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                                         {transaction.name}
                                                     </Typography>
-                                                    <Typography variant="body2" color="text.secondary">
+                                                    <Typography variant="body2" color="text.secondary" sx={{ fontWeight: "500", fontStyle: "medium", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                                         {transaction.date}
                                                     </Typography>
                                                 </Box>
-                                                <Typography variant="body1" fontWeight="bold" color="success.main">
+                                                <Typography variant="body1" sx={{ fontWeight: "600", fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                                     {transaction.amount}
                                                 </Typography>
                                             </Box>
-                                            {index < transactions.length - 1 && <Divider />}
+
                                         </Box>
                                     ))}
                                 </Box>
@@ -446,10 +443,14 @@ const Dashboard = () => {
                                         py: 1.5,
                                         bgcolor: '#42794A',
                                         fontWeight: 'bold',
-                                        mt: 2,
                                         '&:hover': {
                                             bgcolor: '#42794A'
-                                        }
+                                        },
+                                        flexFlow: "HORIZONTAL",
+                                        width: "426px",
+                                        height: "56px",
+                                        borderRadius: "12px",
+                                        padding: "16px 24px 16px 24px",
                                     }}
                                 >
                                     Settle Now
@@ -479,40 +480,42 @@ const Dashboard = () => {
                                     <Typography variant="h5" sx={{ mt: 1, mb: 2, fontWeight: "600", fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                         ¥1,23,816.19
                                     </Typography>
+                                    <Divider />
 
                                     {transactions.map((transaction, index) => (
                                         <Box key={index}>
                                             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 1.5 }}>
                                                 <Box>
-                                                    <Typography variant="body1" fontWeight="medium">
+                                                    <Typography variant="body1" sx={{ fontWeight: "600", fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                                         {transaction.name}
                                                     </Typography>
-                                                    <Typography variant="body2" color="text.secondary">
+                                                    <Typography variant="body2" color="text.secondary" sx={{ fontWeight: "500", fontStyle: "medium", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                                         {transaction.date}
                                                     </Typography>
                                                 </Box>
-                                                <Typography variant="body1" fontWeight="bold" color="success.main">
+                                                <Typography variant="body1" sx={{ fontWeight: "600", fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                                     {transaction.amount}
                                                 </Typography>
                                             </Box>
-                                            {index < transactions.length - 1}
                                         </Box>
                                     ))}
                                 </Box>
 
                                 <Button
-                                    variant="outlined"
+                                    variant="contained"
                                     fullWidth
                                     sx={{
                                         py: 1.5,
-                                        borderColor: '#42794A',
-                                        color: '#42794A',
+                                        bgcolor: '#42794A',
                                         fontWeight: 'bold',
                                         mt: 2,
                                         '&:hover': {
-                                            borderColor: '#42794A',
-                                            backgroundColor: 'rgba(66, 121, 74, 0.04)'
-                                        }
+                                            bgcolor: '#42794A'
+                                        },
+                                        flexFlow: "HORIZONTAL",
+                                        height: "56px",
+                                        borderRadius: "12px",
+                                        padding: "16px 24px 16px 24px",
                                     }}
                                 >
                                     View All

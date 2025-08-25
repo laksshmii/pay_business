@@ -9,7 +9,7 @@ const StyledBox = styled(Box)({
   boxShadow: `
     0px 4px 12px 4px #E9E9E980, 
   `,
-  borderRadius: "35px",
+  borderRadius: "4px",
   maxWidth: "90%",
 });
 
@@ -17,7 +17,7 @@ const CustomTab = styled((props) => <Tab disableRipple {...props} />)(
   ({ theme }) => ({
     textTransform: "none",
     padding: "0px",
-    minWidth: "auto", 
+    minWidth: "auto",
   })
 );
 
@@ -26,18 +26,19 @@ const TabLabel = styled("span")(({ theme }) => ({
   fontWeight: 600,
   lineHeight: "16.8px",
   fontFamily: "Lato,sans-serif",
-  padding: "10px",
+  padding: "12px 16px 12px 16px",
   display: "inline-block",
+  height: "42px",
   whiteSpace: "nowrap",
-  width: "auto", // Set width to auto to fit content
+  width: "208px", // Set width to auto to fit content
   "&.Mui-selected": {
-    backgroundColor: theme.palette.BudgieThemeColor.Primary[200],
-    color: theme.palette.BudgieThemeColor.Neutrals[1300],
-    borderRadius: "35px",
+    backgroundColor: "#42794A",
+    color: "white",
+    borderRadius: "4px",
   },
   "&:not(.Mui-selected)": {
     backgroundColor: "white",
-    color: theme.palette.BudgieThemeColor.Neutrals[1100],
+    color: "#42794A",
   },
 }));
 

@@ -18,13 +18,10 @@ import {
     Share,
     ContentCopy
 } from '@mui/icons-material';
+import logo from "../../assets/img/Group 17.png";
 
 // Styled Components
-const PageContainer = styled(Container)(({ theme }) => ({
-    padding: theme.spacing(3),
-    backgroundColor: '#f5f5f5',
-    minHeight: '100vh',
-}));
+
 
 const ContentCard = styled(Card)(({ theme }) => ({
     padding: theme.spacing(3),
@@ -47,26 +44,38 @@ const UpiCard = () => {
     };
 
     return (
-        <PageContainer maxWidth="sm">
+        <>
             <ContentCard>
                 <Box display="flex" flexDirection="column" alignItems="center">
+                    {/* QR Code */}
+                    <Box
+                        component="img"
+                        src={logo}
+                        alt="logo"
+                        sx={{
+                            width: "72.00029754638672px",
+                            height: "62.000267028808594",
+                            mb: 3,
+
+
+                        }}
+                    />
                     {/* QR Code */}
                     <Box
                         component="img"
                         src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=9876543210sqpay`}
                         alt="QR Code"
                         sx={{
-                            width: 150,
-                            height: 150,
+                            width: "426px",
+                            height: "426px",
                             mb: 3,
-                            border: '1px solid #e0e0e0',
-                            borderRadius: '8px'
+
                         }}
                     />
 
                     {/* UPI ID with Copy Icon */}
                     <Box display="flex" alignItems="center" mb={1}>
-                        <Typography variant="h6" fontWeight="bold">
+                        <Typography variant="h6" sx={{ fontSize: '20px', fontWeight: "700", fontStyle: "bold", lineHeight: "100%", letterSpacing: "0%" }}>
                             UPI ID: 9876543210sqpay
                         </Typography>
                         <IconButton
@@ -79,7 +88,7 @@ const UpiCard = () => {
                     </Box>
 
                     {/* Additional Text */}
-                    <Typography variant="body2" color="text.secondary" gutterBottom>
+                    <Typography variant="body2" color="text.secondary" sx={{ fontWeight: "500", fontStyle: "medium", fontSize: "16px", lineHeight: "18px", letterSpacing: "0%" }} gutterBottom>
                         liuaiim Mohamraddi
                     </Typography>
 
@@ -89,16 +98,19 @@ const UpiCard = () => {
                             variant="outlined"
                             startIcon={<Download />}
                             sx={{
-                                borderColor: '#42794A',
-                                color: '#42794A',
-                                fontWeight: 'bold',
+                                borderColor: '#EEEEEE',
+                                color: '#252525',
+                                backgroundColor: '#EEEEEE',
                                 borderRadius: '8px',
                                 textTransform: 'none',
+                                height: "56px",
+                                width: "204px",
                                 px: 2,
                                 '&:hover': {
-                                    borderColor: '#42794A',
+                                    borderColor: '#EEEEEE',
                                     backgroundColor: 'rgba(66, 121, 74, 0.04)'
-                                }
+                                },
+                                padding: '16px 12px 16px 12px'
                             }}
                         >
                             Download
@@ -107,16 +119,19 @@ const UpiCard = () => {
                             variant="outlined"
                             startIcon={<Share />}
                             sx={{
-                                borderColor: '#42794A',
-                                color: '#42794A',
-                                fontWeight: 'bold',
+                                borderColor: '#EEEEEE',
+                                color: '#252525',
+                                backgroundColor: '#EEEEEE',
                                 borderRadius: '8px',
                                 textTransform: 'none',
+                                height: "56px",
+                                width: "204px",
                                 px: 2,
                                 '&:hover': {
-                                    borderColor: '#42794A',
+                                    borderColor: '#EEEEEE',
                                     backgroundColor: 'rgba(66, 121, 74, 0.04)'
-                                }
+                                },
+                                padding: '16px 12px 16px 12px'
                             }}
                         >
                             Share
@@ -136,7 +151,7 @@ const UpiCard = () => {
                     UPI ID copied to clipboard!
                 </Alert>
             </Snackbar>
-        </PageContainer>
+        </>
     );
 };
 

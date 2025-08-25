@@ -220,15 +220,8 @@ module.exports = (env, argv) => {
           "Access-Control-Allow-Headers":
             "X-Requested-With, content-type, Authorization",
         },
-        proxy: [
-          {
-            context: ["/wallet"],
-            target: "https://64.227.189.27",
-            changeOrigin: true,
-            secure: false,  // ⬅️ allows invalid/self-signed certs
-            logLevel: "debug",
-          },
-        ],
+
+
 
 
       },

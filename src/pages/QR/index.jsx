@@ -21,8 +21,8 @@ import {
     Add,
     CheckCircle
 } from '@mui/icons-material';
-import ScrollableTabsButtonVisible from "../../components/tab/Tab";
-import UpiCard from './upiCard';
+import ScrollableTabsButtonVisible from "@/components/Tab/Tab";
+import UpiCard from '@/pages/QR/UpiCard';
 import ActiveQrList from './activeQrList';
 import QrCodeRequests from './qrCodeRequests';
 

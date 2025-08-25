@@ -54,39 +54,43 @@ const ActiveQrList = () => {
     <Box>
       {qrCodes.map((qr, index) => (
         <QrListCard key={index} variant="outlined">
-          <CardContent sx={{ 
-            display: 'flex', 
+          <CardContent sx={{
+            display: 'flex',
             alignItems: 'center',
             padding: '16px !important',
             '&:last-child': { paddingBottom: '16px' }
           }}>
             {/* QR Code Image */}
-            <Box
-              component="img"
-              src={`https://api.qrserver.com/v1/create-qr-code/?size=50x50&data=${qr.id}`}
-              alt="QR Code"
-              sx={{
-                width: 50,
-                height: 50,
-                marginRight: '16px',
-                border: '1px solid #e0e0e0',
-                borderRadius: '8px'
-              }}
-            />
-            
+            <CardContent sx={{
+              width: "96px",
+              height: "96px",
+              border: '1.33px solid #e0e0e0',
+              borderRadius: '10.67px',
+              marginRight: '16px'
+            }}>
+              <Box
+                component="img"
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=50x50&data=${qr.id}`}
+                alt="QR Code"
+                sx={{ width: "74.66666412353516px", height: "74.66666412353516px", padding:"0px 10.67px 10.67px 0px" }}
+
+              />
+            </CardContent>
+
+
             {/* QR Code Details */}
-            <Box sx={{ flexGrow: 1 }}>
-              <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: '#42794A' }}>
+            <Box sx={{ flexGrow: 1, gap: '8px' }}>
+              <Typography variant="h6" gutterBottom sx={{ color: '#252525', fontWeight: "600", fontStyle: "Semibold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "Right" }}>
                 {qr.id}
               </Typography>
-              <Typography variant="body2" color="text.secondary" gutterBottom>
+              <Typography variant="body2" sx={{ fontWeight: "500", color: "#252525", fontSize: "16px", lineHeight: "100%", letterSpacing: "0%", fontStyle: "medium" }} color="text.secondary" gutterBottom>
                 {qr.description}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" sx={{ fontWeight: "500", color: "#999999", fontSize: "16px", lineHeight: "100%", letterSpacing: "0%", fontStyle: "medium" }}>
                 {qr.terminal}
               </Typography>
             </Box>
-            
+
             {/* Right Arrow Icon */}
             <IconButton size="small" sx={{ color: '#42794A' }}>
               <ChevronRight />
