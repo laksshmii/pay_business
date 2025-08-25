@@ -28,7 +28,6 @@
     "apexcharts": "^3.52.0",
     "d3": "^7.9.0",
     "d3-org-chart": "^3.1.1",
-    "date-fns": "^2.29.3",
     "dayjs": "^1.11.13",
     "formik": "^2.4.6",
     "material-react-toastify": "^10.0.5",
