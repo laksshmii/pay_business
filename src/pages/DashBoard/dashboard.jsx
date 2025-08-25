@@ -77,13 +77,14 @@ const HeroCard = styled(Box)(({ theme }) => ({
         flexDirection: 'column',
         height: 'auto',
     },
-    backgroundColor:"#FFFFFF",
+    backgroundColor: "#FFFFFF",
 }));
 
 // Styled components for the profile and QR cards
 const ProfileCard = styled(Card)(({ theme }) => ({
     padding: theme.spacing(4),
     height: 392,
+    width: 490,
     borderRadius: '16px',
     border: '1px solid #E0E0E0',
     display: 'flex',
@@ -106,10 +107,12 @@ const SettlementCard = styled(Card)(({ theme }) => ({
     padding: theme.spacing(3),
     borderRadius: '16px',
     border: '1px solid #E0E0E0',
-    height: '100%',
+    height: 396,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    width: 490,
+
 }));
 
 const TransactionsCard = styled(Card)(({ theme }) => ({
@@ -192,11 +195,11 @@ const Dashboard = () => {
                         {stats.map((stat, index) => (
                             <Grid item xs={12} sm={6} md={3} key={index}>
                                 <StatsCard>
-                                   
-                                    <Typography variant="h4" fontWeight="bold" gutterBottom style={{ color: '#42794A', fontSize:"40px" ,letterSpacing:"-2%", forntweight:"700", lineHeight:"100%",horizontalAlign:"center"}}>
+
+                                    <Typography variant="h4" fontWeight="bold" gutterBottom style={{ color: '#42794A', fontSize: "40px", letterSpacing: "-2%", forntweight: "700", lineHeight: "100%", horizontalAlign: "center" }}>
                                         {stat.value}
                                     </Typography>
-                                    <Typography variant="body2" color="text.secondary" sx={{ fontSize:"20px" , forntweight:"500", lineHeight:"100%", letterSpacing:"0%"}}>
+                                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: "20px", forntweight: "500", lineHeight: "100%", letterSpacing: "0%" }}>
                                         {stat.title}
                                     </Typography>
                                 </StatsCard>
@@ -214,11 +217,14 @@ const Dashboard = () => {
                                 <Typography
                                     variant="caption"
                                     sx={{
-                                        fontWeight: "bold",
-                                        fontSize: "12px",
+                                        fontSize: "14px",
                                         color: "#999999",
                                         letterSpacing: "1px",
                                         textTransform: "uppercase",
+                                        fontWeight: 600,
+                                        lineHeight: "16px",
+                                        letterSpacing: "12%",
+                                        fontStyle: "SemiBold"
                                     }}
                                 >
                                     PROFILE
@@ -278,12 +284,12 @@ const Dashboard = () => {
                                     </Box>
 
                                     <Box sx={{ width: 184, height: 184, gap: "16px" }}>
-                                        <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, mt: 3 }} gutterBottom>
+                                        <Typography variant="h6" sx={{ mb: 1, mt: 3, fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", fontWeight: "600", horizontalAlign: "Right" }} gutterBottom>
                                             Complete your profile
                                         </Typography>
-                                        <Typography style={{ color: "#999999" }} variant="body2" >• Personal KYC</Typography>
-                                        <Typography style={{ color: "#999999" }} variant="body2" >• Company KYC</Typography>
-                                        <Typography style={{ color: "#999999" }} variant="body2" >• Onboarding details</Typography>
+                                        <Typography style={{ color: "#999999", fontWeight: 500, fontStyle: "medium", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%" }} variant="body2" >• Personal KYC</Typography>
+                                        <Typography style={{ color: "#999999", fontWeight: 500, fontStyle: "medium", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%" }} variant="body2" >• Company KYC</Typography>
+                                        <Typography style={{ color: "#999999", fontWeight: 500, fontStyle: "medium", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%" }} variant="body2" >• Onboarding details</Typography>
                                     </Box>
                                 </Box>
 
@@ -296,9 +302,13 @@ const Dashboard = () => {
                                         fontWeight: 'bold',
                                         '&:hover': {
                                             bgcolor: '#42794A'
-                                        }
+                                        },
+                                        flexFlow: "HORIZONTAL",
+                                        width: "426px",
+                                        height: "56px",
+                                        borderRadius: "12px",
+                                        padding: "16px 24px 16px 24px",
                                     }}
-                                    onClick={() => setProgress((prev) => (prev >= 100 ? 0 : prev + 10))}
                                 >
                                     Next
                                 </Button>
@@ -311,11 +321,14 @@ const Dashboard = () => {
                                 <Typography
                                     variant="caption"
                                     sx={{
-                                        fontWeight: "bold",
-                                        fontSize: "12px",
+                                        fontSize: "14px",
                                         color: "#999999",
                                         letterSpacing: "1px",
                                         textTransform: "uppercase",
+                                        fontWeight: 600,
+                                        lineHeight: "16px",
+                                        letterSpacing: "12%",
+                                        fontStyle: "SemiBold"
                                     }}
                                 >
                                     QR
@@ -348,12 +361,12 @@ const Dashboard = () => {
                                     </Box>
 
                                     <Box sx={{ width: 184, height: 184, gap: "16px" }}>
-                                        <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, mt: 3 }} gutterBottom>
+                                        <Typography variant="h6" sx={{ mb: 1, mt: 3, fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", fontWeight: "600", horizontalAlign: "Right" }} gutterBottom>
                                             Order QR
                                         </Typography>
-                                        <Typography style={{ color: "#999999" }} variant="body2" >• Receive Payment</Typography>
-                                        <Typography style={{ color: "#999999" }} variant="body2" >• Order new QRs</Typography>
-                                        <Typography style={{ color: "#999999" }} variant="body2" >• Download QR</Typography>
+                                        <Typography style={{ color: "#999999", fontWeight: 500, fontStyle: "medium", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%" }} variant="body2" >• Receive Payment</Typography>
+                                        <Typography style={{ color: "#999999", fontWeight: 500, fontStyle: "medium", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%" }} variant="body2" >• Order new QRs</Typography>
+                                        <Typography style={{ color: "#999999", fontWeight: 500, fontStyle: "medium", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%" }} variant="body2" >• Download QR</Typography>
                                     </Box>
                                 </Box>
                                 <Button
@@ -365,9 +378,13 @@ const Dashboard = () => {
                                         fontWeight: 'bold',
                                         '&:hover': {
                                             bgcolor: '#42794A'
-                                        }
+                                        },
+                                        flexFlow: "HORIZONTAL",
+                                        width: "426px",
+                                        height: "56px",
+                                        borderRadius: "12px",
+                                        padding: "16px 24px 16px 24px",
                                     }}
-                                    onClick={() => setProgress((prev) => (prev >= 100 ? 0 : prev + 10))}
                                 >
                                     Next
                                 </Button>
@@ -386,16 +403,19 @@ const Dashboard = () => {
                                     <Typography
                                         variant="caption"
                                         sx={{
-                                            fontWeight: "bold",
-                                            fontSize: "12px",
+                                            fontSize: "14px",
                                             color: "#999999",
                                             letterSpacing: "1px",
                                             textTransform: "uppercase",
+                                            fontWeight: 600,
+                                            lineHeight: "16px",
+                                            letterSpacing: "12%",
+                                            fontStyle: "SemiBold"
                                         }}
                                     >
                                         SETTLEMENT
                                     </Typography>
-                                    <Typography variant="h5" fontWeight="bold" sx={{ mt: 1, mb: 2 }}>
+                                    <Typography variant="h5" fontWeight="bold" sx={{ mt: 1, mb: 2, fontWeight: "600", fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                         ¥1,23,816.19
                                     </Typography>
 
@@ -444,16 +464,19 @@ const Dashboard = () => {
                                     <Typography
                                         variant="caption"
                                         sx={{
-                                            fontWeight: "bold",
-                                            fontSize: "12px",
+                                            fontSize: "14px",
                                             color: "#999999",
                                             letterSpacing: "1px",
                                             textTransform: "uppercase",
+                                            fontWeight: 600,
+                                            lineHeight: "16px",
+                                            letterSpacing: "12%",
+                                            fontStyle: "SemiBold"
                                         }}
                                     >
                                         TOTAL TRANSACTIONS
                                     </Typography>
-                                    <Typography variant="h5" fontWeight="bold" sx={{ mt: 1, mb: 2 }}>
+                                    <Typography variant="h5" sx={{ mt: 1, mb: 2, fontWeight: "600", fontStyle: "SemiBold", fontSize: "20px", lineHeight: "100%", letterSpacing: "0%", horizontalAlign: "right" }}>
                                         ¥1,23,816.19
                                     </Typography>
 
@@ -472,7 +495,7 @@ const Dashboard = () => {
                                                     {transaction.amount}
                                                 </Typography>
                                             </Box>
-                                            {index < transactions.length - 1 && <Divider />}
+                                            {index < transactions.length - 1}
                                         </Box>
                                     ))}
                                 </Box>

@@ -24,23 +24,17 @@ import {
   ChevronRight as Rightarrow,
   ChevronLeft as Leftarrow,
   BuildOutlined,
-  Diversity1Outlined,
-  SmsOutlined,
-  ThreePOutlined,
-  ContactMailOutlined,
-  SocialDistanceOutlined,
-  MultipleStopOutlined,
-  NextPlanOutlined,
-  CalendarMonthOutlined,
-  DescriptionOutlined,
+
   HolidayVillage as HolidayVillageIcon,
 } from "@mui/icons-material";
 import { useLocation, Link } from "react-router-dom";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
-
-import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
+import HomeIcon from '@mui/icons-material/Home';
 import ModalWrapper from "@/components/forms/ModalWrapper";
-import { type } from "@testing-library/user-event/dist/type";
+import logo from "../../assets/img/Group 17.png";
+import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const BootstrapTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} arrow classes={{ popper: className }} />
@@ -135,25 +129,26 @@ const DrawerComponent = ({
     {
       text: "Home",
       path: "/dashboard",
-      icon: <BuildOutlined />,
+      icon: <HomeIcon />,
 
     },
     {
-      text: "Home",
+      text: "QR",
       path: "/manageQr",
-      icon: <BuildOutlined />,
+      icon: <HeadsetMicIcon />,
 
     },
+
     {
-      text: "Home",
-      path: "/profile",
-      icon: <BuildOutlined />,
+      text: "History",
+      path: "/history",
+      icon: <AccessTimeIcon />,
     },
     {
-      text: "Home",
-      path: "/history",
-      icon: <BuildOutlined />,
-    }
+      text: "Profile",
+      path: "/profile",
+      icon: <AccountCircleIcon />,
+    },
 
 
 
@@ -186,7 +181,7 @@ const DrawerComponent = ({
         }}
       >
         <img
-          src=""
+          src={logo}
           alt="Sidebar Logo"
           style={{ height: "48px", width: "56px" }}
         />
@@ -209,14 +204,7 @@ const DrawerComponent = ({
                 <ListItemButton
                   component={Link}
                   to={path}
-                  // onClick={(e) => {
-                  //   if (hasSubmenu) {
-                  //     // e.preventDefault();
-                  //     handleMenuClick(submenu, hasSubmenu, text);
-                  //   } else {
-                  //     handleMenuClick([], hasSubmenu, text);
-                  //   }
-                  // }}
+
                   sx={{
                     backgroundColor:
                       location.pathname === path ||
@@ -274,8 +262,12 @@ const DrawerComponent = ({
                           : "white",
                       minWidth: 0,
                     }}
-                  >
-                    <BootstrapTooltip title={text}>{text}</BootstrapTooltip>
+                  ><BootstrapTooltip title={text}>
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                        {icon}
+                        {text}
+                      </span>
+                    </BootstrapTooltip>
                   </ListItemIcon>
                 </ListItemButton>
               </ListItem>
@@ -284,48 +276,7 @@ const DrawerComponent = ({
         </List>
       </Box>
 
-      <Box
-        sx={{
-          width: "100%",
-          height: "175px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: 1,
-          backgroundImage: `url()`,
-          backgroundSize: "100% 105%",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom",
-        }}
-      >
-        <Stack
-          justifyContent="center"
-          alignItems="center"
-          padding={1}
-          paddingBottom={2}
-          paddingTop="12px"
-          borderRadius={5}
-          spacing={2}
-          height="104px"
-          sx={{ backgroundColor: "white", alignItems: "center" }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "30px",
-              height: "30px",
-              borderRadius: "50%",
-              border: "7px solid #214a32",
-              backgroundColor: "transparent",
-            }}
-          >
-            <QuestionMarkIcon onClick={() => setOpen(true)} sx={{ fontSize: "16px" }} />
-          </Box>
-          <LogoutIcon sx={{ fontSize: "20px" }} />
-        </Stack>
-      </Box>
+
 
     </Box>
 
