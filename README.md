@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+<!-- Installation -->
+# Pay Business Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based dashboard application built with **Webpack** and **styled-components** for styling.  
+The app follows a modular folder structure (`components`, `pages`, `router`, etc.) for scalability and maintainability.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Setup Instructions
 
-### `npm start`
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd pay_business
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone or download the project files
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Navigate to the project directory
 
-### `npm test`
+Install dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- bash -->
+npm install
+Running the Application
+<!-- bash -->
+npm start
+The application will open in your browser at http://localhost:3000.
 
-### `npm run build`
+<!-- Webpack Configuration Notes -->
+Your Webpack build is working successfully as shown by the output:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Main bundle: ~598 KiB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+CSS bundle: ~8.5 KB
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- Project Architecture & Approach -->
 
-### `npm run eject`
+React (functional components + hooks):
+All UI and business logic are handled via modular React components inside src/components and src/pages.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Styled-components:
+CSS-in-JS approach is used for styling, providing scoped styles and theme support.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- Webpack: -->
+Configured for bundling React + JavaScript + CSS.
+From the sample build output:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Main bundle: ~598 KiB
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+CSS bundle: ~8.5 KiB
 
-## Learn More
+<!-- Folder Structure: -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+src/
+├── assets/          # Static assets (images, fonts, etc.)
+├── components/      # Reusable UI components
+├── layout/          # Layout-related components (wrappers, headers, etc.)
+├── pages/           # Page-level components (Dashboard, Profile, QR, etc.)
+├── router/          # App routing logic
+├── types/           # Type definitions / interfaces (if any)
+├── App.js           # Root component
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- ⏱️ Time Spent -->
 
-### Code Splitting
+Initial project setup (Webpack, React, styled-components): 1–2 hrs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Component & layout structure: 3–4 hrs
 
-### Analyzing the Bundle Size
+Styling & theming: 2–3 hrs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Debugging build + testing: 1 hr
 
-### Making a Progressive Web App
+Total estimated time: ~7–10 hrs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<!-- ⚠️ Known Limitations -->
 
-### Advanced Configuration
+Bundle size can be further optimized using code splitting and lazy loading.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+No unit tests are currently included (can be added with Jest + React Testing Library).
 
-### Deployment
+API integration (if any) is not shown in this version.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Theme system for styled-components is basic; can be extended for dark/light modes.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
