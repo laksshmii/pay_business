@@ -16,15 +16,14 @@ import {
 } from '@mui/material';
 import {
     QrCode,
-    Download,
-    Share,
-    Add,
-    CheckCircle
+   
 } from '@mui/icons-material';
 import ScrollableTabsButtonVisible from "@/components/Tab/Tab";
 import UpiCard from '@/pages/QR/UpiCard';
 import ActiveQrList from './activeQrList';
 import QrCodeRequests from './qrCodeRequests';
+
+
 
 // Styled Components
 const PageContainer = styled(Container)(({ theme }) => ({
@@ -74,30 +73,11 @@ const ManageQrPos = () => {
         { label: 'QR Code Requests', component: <QrCodeRequests /> },
     ];
 
-    const [tabValue, setTabValue] = useState(1); // Start with QR Code Requests tab
 
-    const handleTabChange = (event, newValue) => {
-        setTabValue(newValue);
-    };
 
-    const qrRequests = [
-        {
-            title: "All Marketing Sales",
-            address: "A. Binomin Hogos, VOC Port Authority, Tufkent, 620604",
-            date: "Requested on 26.04.202",
-            status: "QR Request Accepted"
-        },
-        {
-            title: "All Marketing Sales",
-            address: "A. Binomin Hogos, VOC Port Authority, Tufkent, 620604",
-            date: "Requested on 26.04.202",
-            status: "QR Request Accepted"
-        }
-    ];
 
     return (
         <PageContainer>
-            {/* Header Section */}
             <HeaderCard>
                 <Box display="flex" justifyContent="space-between" alignItems="center">
                     <Box display="flex" alignItems="center">
@@ -111,18 +91,33 @@ const ManageQrPos = () => {
                 </Box>
             </HeaderCard>
 
-            {/* Two-column layout for Tabs and UPI ID */}
             <Grid container spacing={1}>
-                {/* Left Column - Tabs */}
                 <Grid item xs={12} md={6}>
                     <UpiCard />
                 </Grid>
 
-                {/* Right Column - UPI ID and Actions */}
                 <Grid item xs={12} md={6}>
 
                     <ContentCard>
                         <ScrollableTabsButtonVisible tabs={tabs} />
+                        <Button
+                            variant="contained"
+                            fullWidth
+                            sx={{
+                                py: 1.5,
+                                bgcolor: '#42794A',
+                                fontWeight: 'bold',
+                                '&:hover': {
+                                    bgcolor: '#42794A'
+                                },
+                                flexFlow: "HORIZONTAL",
+                                height: "56px",
+                                borderRadius: "12px",
+                                padding: "16px 24px 16px 24px",
+                            }}
+                        >
+                            Request more QR Codes
+                        </Button>
 
 
                     </ContentCard>

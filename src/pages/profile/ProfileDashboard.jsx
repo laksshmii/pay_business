@@ -24,6 +24,8 @@ import {
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import GradingOutlinedIcon from '@mui/icons-material/GradingOutlined';
+import profilLogo from '../../assets/img/profile_logo.png';
+
 
 // Styled Components
 const GradientBox = styled(Box)(({ theme }) => ({
@@ -100,6 +102,8 @@ const HeroCard = styled(Box)(({ theme }) => ({
     flexDirection: "column",
     height: "auto",
   },
+  backgroundColor: "#FFFFFF",
+
 }));
 
 const DashboardContainer = styled(Box)(({ theme }) => ({
@@ -175,7 +179,7 @@ const ProfileDashboard = () => {
             <ImageBox>
               <Box
                 component="img"
-                src="https://via.placeholder.com/200x150/42794A/FFFFFF?text=QPay+Device"
+                src={profilLogo}
                 alt="QPay Device"
                 sx={{ width: "70%", height: "auto" }}
               />
